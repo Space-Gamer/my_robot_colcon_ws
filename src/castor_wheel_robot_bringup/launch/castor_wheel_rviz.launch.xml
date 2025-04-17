@@ -1,6 +1,6 @@
 <launch>
     <let name="urdf_path"
-         value="$(find-pkg-share castor_wheel_robot_description)/urdf/castor_wheel_robot.urdf"/>
+         value="$(find-pkg-share castor_wheel_robot_description)/urdf/castor_wheel_robot.urdf.xacro"/>
     <let name="rviz_config_path"
          value="$(find-pkg-share castor_wheel_robot_description)/rviz/castor_wheel_config.rviz"/>
     <node pkg="robot_state_publisher" exec="robot_state_publisher">
