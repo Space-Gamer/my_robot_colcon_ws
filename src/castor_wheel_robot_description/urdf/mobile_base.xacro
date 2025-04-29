@@ -19,6 +19,7 @@
             <material name="blue"/>
             <origin xyz="0 0 ${base_height/2}" rpy="0 0 0"/>
         </visual>
+        <xacro:box_inertia m="5.0" l="${base_length}" w="${base_width}" h="${base_height}" xyz="0 0 ${base_height/2}" rpy="0 0 0"/>
     </link>
     <!-- Joint between base_footprint and base -->
     <joint name="base_footprint_base_link_joint" type="fixed">
@@ -35,6 +36,7 @@
             <material name="green"/>
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </visual>
+        <xacro:cylinder_inertia m="1.0" r="${wheel_radius}" l="${wheel_length}" xyz="0 0 0" rpy="0 0 0"/>
     </link>
     <!-- Joint between base and left wheel -->
     <joint name="base_link_left_wheel_joint" type="continuous">
@@ -52,6 +54,7 @@
             <material name="green"/>
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </visual>
+        <xacro:cylinder_inertia m="1.0" r="${wheel_radius}" l="${wheel_length}" xyz="0 0 0" rpy="0 0 0"/>
     </link>
     <!-- Joint between base and right wheel -->
     <joint name="base_link_right_wheel_joint" type="continuous">
@@ -69,6 +72,7 @@
             <material name="green"/>
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </visual>
+        <xacro:sphere_inertia m="0.5" r="${wheel_radius/2}" xyz="0 0 0" rpy="0 0 0"/>
     </link>
     <!-- Joint between base and castor wheel -->
     <joint name="base_link_castor_wheel_joint" type="fixed">

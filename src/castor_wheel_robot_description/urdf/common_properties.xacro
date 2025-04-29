@@ -12,4 +12,30 @@
     <material name="green">
         <color rgba="0 1 0 1"/>
     </material>
+
+    <!-- Inertial Tags -->
+    <!-- Box Inertia -->
+    <xacro:macro name="box_inertia" params="m l w h xyz rpy">
+        <inertial>
+            <origin xyz="${xyz}" rpy="${rpy}"/>
+            <mass value="${m}"/>
+            <inertia ixx="${(m/12)*(h*h+l*l)}" ixy="0.0" ixz="0.0" iyy="${(m/12)*(h*h+w*w)}" iyz="0.0" izz="${(m/12)*(w*w+l*l)}"/>
+        </inertial>
+    </xacro:macro>
+    <!-- Cylinder Inertia -->
+    <xacro:macro name="cylinder_inertia" params="m r l xyz rpy">
+        <inertial>
+            <origin xyz="${xyz}" rpy="${rpy}"/>
+            <mass value="${m}"/>
+            <inertia ixx="${(m/12)*((3*r*r)+(l*l))}" ixy="0.0" ixz="0.0" iyy="${(m/12)*((3*r*r)+(l*l))}" iyz="0.0" izz="${(m/2)*r*r}"/>
+        </inertial>
+    </xacro:macro>
+    <!-- Sphere Inertia -->
+    <xacro:macro name="sphere_inertia" params="m r xyz rpy">
+        <inertial>
+            <origin xyz="${xyz}" rpy="${rpy}"/>
+            <mass value="${m}"/>
+            <inertia ixx="${2/5*m*r*r}" ixy="0.0" ixz="0.0" iyy="${2/5*m*r*r}" iyz="0.0" izz="${2/5*m*r*r}"/>
+        </inertial>
+    </xacro:macro>
 </robot>
