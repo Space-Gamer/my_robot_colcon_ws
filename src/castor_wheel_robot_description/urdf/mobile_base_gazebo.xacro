@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- Base Link -->
+    <gazebo reference="base_link">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    <!-- Left Wheel -->
+    <gazebo reference="left_wheel">
+        <material>Gazebo/Green</material>
+    </gazebo>
+    <!-- Right Wheel -->
+    <gazebo reference="right_wheel">
+        <material>Gazebo/Green</material>
+    </gazebo>
+    <!-- Castor Wheel -->
+    <gazebo reference="castor_wheel">
+        <material>Gazebo/Green</material>
+    </gazebo>
+</robot>

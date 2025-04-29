@@ -6,4 +6,7 @@
 
     <!-- Mobile Base File -->
     <xacro:include filename="mobile_base.xacro"/>
+
+    <!-- Gazebo Plugins -->
+    <xacro:include filename="mobile_base_gazebo.xacro"/>
 </robot>
