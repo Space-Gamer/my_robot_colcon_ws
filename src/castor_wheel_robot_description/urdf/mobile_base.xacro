@@ -19,6 +19,12 @@
             <material name="blue"/>
             <origin xyz="0 0 ${base_height/2}" rpy="0 0 0"/>
         </visual>
+        <collision>
+            <geometry>
+                <box size="${base_length} ${base_width} ${base_height}"/>
+            </geometry>
+            <origin xyz="0 0 ${base_height/2}" rpy="0 0 0"/>
+        </collision>
         <xacro:box_inertia m="5.0" l="${base_length}" w="${base_width}" h="${base_height}" xyz="0 0 ${base_height/2}" rpy="0 0 0"/>
     </link>
     <!-- Joint between base_footprint and base -->
@@ -36,6 +42,12 @@
             <material name="green"/>
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </collision>
         <xacro:cylinder_inertia m="1.0" r="${wheel_radius}" l="${wheel_length}" xyz="0 0 0" rpy="0 0 0"/>
     </link>
     <!-- Joint between base and left wheel -->
@@ -54,6 +66,12 @@
             <material name="green"/>
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </collision>
         <xacro:cylinder_inertia m="1.0" r="${wheel_radius}" l="${wheel_length}" xyz="0 0 0" rpy="0 0 0"/>
     </link>
     <!-- Joint between base and right wheel -->
@@ -72,6 +90,12 @@
             <material name="green"/>
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </visual>
+        <collision>
+            <geometry>
+                <sphere radius="${wheel_radius/2}"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </collision>
         <xacro:sphere_inertia m="0.5" r="${wheel_radius/2}" xyz="0 0 0" rpy="0 0 0"/>
     </link>
     <!-- Joint between base and castor wheel -->
