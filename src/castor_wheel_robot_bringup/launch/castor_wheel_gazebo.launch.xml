@@ -2,7 +2,7 @@
     <let name="urdf_path"
          value="$(find-pkg-share castor_wheel_robot_description)/urdf/castor_wheel_robot.urdf.xacro"/>
     <let name="rviz_config_path"
-         value="$(find-pkg-share castor_wheel_robot_bringup)/rviz/castor_wheel_config.rviz"/>
+         value="$(find-pkg-share castor_wheel_robot_bringup)/rviz/castor_wheel_config_with_camera.rviz"/>
     <node pkg="robot_state_publisher" exec="robot_state_publisher">
         <param name="robot_description" value="$(command 'xacro $(var urdf_path)')"/>
     </node>

@@ -9,4 +9,7 @@
 
     <!-- Gazebo Plugins -->
     <xacro:include filename="mobile_base_gazebo.xacro"/>
+
+    <!-- Sensor File -->
+    <xacro:include filename="sensor.xacro"/>
 </robot>
