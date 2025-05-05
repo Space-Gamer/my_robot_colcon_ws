@@ -12,6 +12,14 @@
     <material name="green">
         <color rgba="0 1 0 1"/>
     </material>
+    <!-- Material Orange -->
+    <material name="orange">
+        <color rgba="1 0.5 0 1"/>
+    </material>
+    <!-- Material Yellow -->
+    <material name="yellow">
+        <color rgba="1 1 0 1"/>
+    </material>
 
     <!-- Inertial Tags -->
     <!-- Box Inertia -->
