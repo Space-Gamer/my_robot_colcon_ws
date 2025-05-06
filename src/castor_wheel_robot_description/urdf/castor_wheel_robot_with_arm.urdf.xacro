@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<robot name="Castor Wheel Robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Common Properties File -->
+    <xacro:include filename="common_properties.xacro"/>
+
+    <!-- Mobile Base File -->
+    <xacro:include filename="mobile_base.xacro"/>
+
+    <!-- Mobile Base Gazebo Plugins -->
+    <xacro:include filename="mobile_base_gazebo.xacro"/>
+
+    <!-- Sensor File -->
+    <xacro:include filename="sensor.xacro"/>
+
+    <!-- Arm File -->
+    <xacro:include filename="arm.xacro"/>
+
+    <!-- Arm Gazebo Plugins -->
+    <xacro:include filename="arm_gazebo.xacro"/>
+
+    <!-- Joint between base_footprint and arm -->
+    <joint name="base_footprint_arm_base_joint" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="arm_base_link"/>
+        <origin xyz="0 0 ${base_height + wheel_radius}" rpy="0 0 0"/>
+    </joint>
+</robot>
