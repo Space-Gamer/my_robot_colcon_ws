@@ -7,4 +7,7 @@
     <!-- Arm File -->
     <xacro:include filename="arm.xacro"/>
 
+    <!-- Gazebo Properties -->
+    <xacro:include filename="arm_gazebo.xacro"/>
+
 </robot>

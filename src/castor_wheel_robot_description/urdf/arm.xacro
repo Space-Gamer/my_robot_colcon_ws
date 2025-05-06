@@ -14,8 +14,15 @@
                 <box size="${arm_base_length} ${arm_base_width} ${arm_base_height}"/>
             </geometry>
             <material name="orange"/>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <origin xyz="0 0 ${arm_base_height/2}" rpy="0 0 0"/>
         </visual>
+        <collision>
+            <geometry>
+                <box size="${arm_base_length} ${arm_base_width} ${arm_base_height}"/>
+            </geometry>
+            <origin xyz="0 0 ${arm_base_height/2}" rpy="0 0 0"/>
+        </collision>
+        <xacro:box_inertia m="0.5" l="${arm_base_length}" w="${arm_base_width}" h="${arm_base_height}" xyz="0 0 ${arm_base_height}" rpy="0 0 0"/>
     </link>
 
     <!-- Forearm link -->
@@ -27,10 +34,17 @@
             <material name="yellow"/>
             <origin xyz="0 0 ${arm_length/2}" rpy="0 0 0"/>
         </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="${arm_radius}" length="${arm_length}"/>
+            </geometry>
+            <origin xyz="0 0 ${arm_length/2}" rpy="0 0 0"/>
+        </collision>
+        <xacro:cylinder_inertia m="0.3" r="${arm_radius}" l="${arm_length}" xyz="0 0 ${arm_length/2}" rpy="0 0 0"/>
     </link>
 
     <!-- Joint between arm_base_link and forearm_link -->
-    <joint name="arm_base_link_forearm_link_joint" type="revolute">
+    <joint name="arm_base_forearm_joint" type="revolute">
         <parent link="arm_base_link"/>
         <child link="forearm_link"/>
         <origin xyz="0 0 ${arm_base_height}" rpy="0 0 0"/>
@@ -48,10 +62,17 @@
             <material name="orange"/>
             <origin xyz="0 0 ${arm_length/2}" rpy="0 0 0"/>
         </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="${arm_radius}" length="${arm_length}"/>
+            </geometry>
+            <origin xyz="0 0 ${arm_length/2}" rpy="0 0 0"/>
+        </collision>
+        <xacro:cylinder_inertia m="0.3" r="${arm_radius}" l="${arm_length}" xyz="0 0 ${arm_length/2}" rpy="0 0 0"/>
     </link>
 
     <!-- Joint between forearm_link and hand_link -->
-    <joint name="forearm_link_hand_link_joint" type="revolute">
+    <joint name="forearm_hand_joint" type="revolute">
         <parent link="forearm_link"/>
         <child link="hand_link"/>
         <origin xyz="0 0 ${arm_length}" rpy="0 0 0"/>
